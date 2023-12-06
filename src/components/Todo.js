@@ -1,9 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Todo.css'
 import Addtask from './Addtask'
 import List from './List'
 const Todo = () => {
   const[tasks, setTasks] = useState ([])
+
+  useEffect(()=>{
+    document.title= `you have ${tasks.length} task`
+  });
 
   const addTask= (title)=>{
     const newTask=[...tasks,  {title}]
