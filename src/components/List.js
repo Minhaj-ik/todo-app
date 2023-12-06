@@ -1,15 +1,15 @@
 import { Button } from 'bootstrap'
 import React from 'react'
 
-const list = () => {
+const List = ({task, index, removeTask}) => {
   return (
     <div>
         <div className="list-task">
-            Task Name
-            <button className="delete-btn">Delete</button>
+            {task.title}
+            <button onClick={() => { removeTask(index) }} className="delete-btn">Delete</button>
         </div>
     </div>
   )
 }
 
-export default list
+export default List
